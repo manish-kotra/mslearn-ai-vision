@@ -44,9 +44,11 @@ def Upload_Images(folder):
 def Train_Model():
     print("Training ...")
     iteration = training_client.train_project(custom_vision_project.id)
+    itr = 1
     while (iteration.status != "Completed"):
         iteration = training_client.get_iteration(custom_vision_project.id, iteration.id)
-        print (iteration.status, '...')
+        print (itr, iteration.status, '...')
+        itr += 1
         time.sleep(5)
     print ("Model trained!")
 
