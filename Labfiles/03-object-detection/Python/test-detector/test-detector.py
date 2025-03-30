@@ -22,7 +22,6 @@ def main():
 
         # Load image and get height, width and channels
         image_file = 'produce.jpg'
-        print('Detecting objects in', image_file)
         image = Image.open(image_file)
         h, w, ch = np.array(image).shape
 
